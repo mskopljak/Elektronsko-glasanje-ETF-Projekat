@@ -1,0 +1,175 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0px;
+  overflow-y: auto;  
+} 
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header p {
+  margin-bottom: 1px;
+  font-size: .80em;
+  font-weight: bolder;
+}
+
+img {
+  height: 120px;
+  width: auto;
+}
+
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+button {
+  color: black;
+  font-size: 17px;
+  background-color: #eceff1;
+  box-shadow: -5px -5px 12px #ffffff,
+    -5px -5px 12px rgb(177, 110, 110);
+  border: none !important;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  color:green; 
+  box-shadow: -5px -5px 10px rgb(5, 204, 98) ;
+  cursor: pointer;
+}
+
+button:disabled{
+  color:grey;
+  box-shadow: none;
+}
+
+.checkboxPointer{
+  cursor: pointer;
+}
+
+.bodyList {
+  height: 100%;
+  margin: auto;
+  background: linear-gradient(to right top, #b9ecf3, #94e1ec); 
+  align-items: center;
+  justify-content: center;
+}
+
+.tableBackground{
+   background:linear-gradient(to right bottom, rgba(60, 181, 211, 0.7), rgba(255,255,255,0.3));
+
+}
+
+.tableBox {
+  box-shadow:  -5px -5px 5px #ffffff, 
+               -5px -5px 5px rgba(0,0,0,1);
+}
+
+.toastr{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modal-actions {
+  margin-top: 20px;
+}
+
+.modal-body {
+  position: relative;
+}
+
+.close-icon {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 15px;
+  background: red;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  box-shadow: none;
+}
+.close-icon:hover{
+  color:none;
+  box-shadow: none;
+}
+
+.btn-confirm,
+.btn-cancel {
+  margin: 0 10px;
+}
+
+.blur{
+  filter:blur(0.9px);
+}
+
+.content {
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  padding: 5px;
+}
+
+.tableContent {
+  height: calc(100%-80px);
+  overflow-y: auto;
+  padding: 5px;
+  margin-top: -10px;
+}
+
+.tableContent::-webkit-scrollbar {
+  width: 5px;
+}
+
+.img{
+  height: 65px;
+  width: auto;
+  margin-top: 2px;
+}
+
+

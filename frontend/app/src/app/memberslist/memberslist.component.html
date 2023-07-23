@@ -1,0 +1,145 @@
+<div>
+  <h1>Dobrošli na Stranicu Svih Članova Komore</h1>
+  <br />
+  <h4>Odaberite Regionalni Centar i Matičnu Sekciju</h4>
+  <br />
+  <table>
+    <tr>
+      <td class="dropdown">
+        <div>
+          <button class="dropbtn" onclick="getCenter(); getResults();">
+            Regionalni Centri
+          </button>
+          <div class="dropdown-content" *ngFor="let Center of center">
+            <a (click)="showCenter(Center)">{{ Center.nazivRegCen }}</a>
+          </div>
+        </div>
+      </td>
+      <td class="dropdown">
+        <div>
+          <button class="dropbtn" onclick="getDistrict()">
+            Matične Sekcije
+          </button>
+          <div class="dropdown-content" *ngFor="let District of shownDistricts">
+            <a (click)="showDistrict(District)">{{ District.nazivMatSek }}</a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div><button (click)="goBack()">NAZAD</button></div>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table>
+    <tr class=" WordWrap">
+      <th>Broj Licence</th>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>KorIme</th>
+      <th>Šifra</th>
+      <th>Tip</th>
+      <th>Izvršio Glasajne</th>
+      <th>Izvršio Kandidovanje</th>
+      <th>idMatSek</th>
+      <th>Matična Sekcija</th>
+      <th>idRegCen</th>
+      <th>Regionalni Centar</th>
+    </tr>
+    <tr *ngFor="let Members of shownMembers" class="tableColor">
+      <td>
+        {{ Members.idCla }}
+      </td>
+      <td>
+        {{ Members.imeCla }}
+      </td>
+      <td>
+        {{ Members.prezimeCla }}
+      </td>
+      <td>
+        {{ Members.korIme }}
+      </td>
+      <td>
+        {{ Members.sifra }}
+      </td>
+      <td>
+        {{ Members.tip }}
+      </td>
+      <td>
+        {{ Members.jeGlasao }}
+      </td>
+      <td>
+        {{ Members.jeKandidovao }}
+      </td>
+      <td>
+        {{ Members.idMatSek }}
+      </td>
+      <td>
+        {{ Members.nazivMatSek }}
+      </td>
+      <td>
+        {{ Members.idRegCen }}
+      </td>
+      <td>
+        {{ Members.nazivRegCen }}
+      </td>
+    </tr>
+    <tr class="Bottom"></tr>
+    <br />
+    <tr>
+      <th colspan="12" class="title">Svi Članovi Komore</th>
+    </tr>
+    <tr>
+      <th>Broj Licence</th>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>KorIme</th>
+      <th>Šifra</th>
+      <th>Tip</th>
+      <th>Izvršio Glasajne</th>
+      <th>Izvršio Kandidovanje</th>
+      <th>idMatSek</th>
+      <th>Matična Sekcija</th>
+      <th>idRegCen</th>
+      <th>Regionalni Centar</th>
+    </tr>
+    <tr *ngFor="let Members of members">
+      <td>
+        {{ Members.idCla }}
+      </td>
+      <td>
+        {{ Members.imeCla }}
+      </td>
+      <td>
+        {{ Members.prezimeCla }}
+      </td>
+      <td>
+        {{ Members.korIme }}
+      </td>
+      <td>
+        {{ Members.sifra }}
+      </td>
+      <td>
+        {{ Members.tip }}
+      </td>
+      <td>
+        {{ Members.jeGlasao }}
+      </td>
+      <td>
+        {{ Members.jeKandidovao }}
+      </td>
+      <td>
+        {{ Members.idMatSek }}
+      </td>
+      <td>
+        {{ Members.nazivMatSek }}
+      </td>
+      <td>
+        {{ Members.idRegCen }}
+      </td>
+      <td>
+        {{ Members.nazivRegCen }}
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,87 @@
+<div>
+  <h1>Dobrodošao Admine</h1>
+
+  <h4>Faza Izbora:</h4>
+  <div class="nalsov">
+    <h3>Broj:  {{ status.statusIzbora }}</h3>
+  </div>
+</div>
+
+<div>
+  <table>
+    <tr>
+      <td>Priprema za Kandidovanje</td>
+      <td><button (click)="prepareNomination()">Set</button></td>
+    </tr>
+    <tr>
+      <td>Počni Kandidovanje</td>
+      <td><button (click)="startNomination()">Start</button></td>
+    </tr>
+    <tr>
+      <td>Završi Kandidovanje</td>
+      <td><button (click)="endNomination()">Stop</button></td>
+    </tr>
+    <tr>
+      <td>Počni Glasajne</td>
+      <td><button (click)="startVote()">Start</button></td>
+    </tr>
+    <tr>
+      <td>Završi Glasanje</td>
+      <td><button (click)="endVote()">Stop</button></td>
+    </tr>
+  </table>
+  <tr class="lists">
+    <td>
+      <div>
+        <button class="listButton" (click)="moveToElectionList()">
+          Izborna Lista
+        </button>
+      </div>
+    </td>
+    <td>
+      <div>
+        <button class="listButton" (click)="moveToListOfCandidates()">
+          Kandidati
+        </button>
+      </div>
+    </td>
+    <td>
+      <div>
+        <button class="listButton" (click)="moveToResults()">
+          Rezultati Izbora
+        </button>
+      </div>
+    </td>
+  </tr>
+  <div>
+    <table class="phase">
+      <tr>
+        <td class="text" colspan="1">Faza 0:</td>
+        <td class="descript" colspan="4">Priprema za Kandidovanje</td>
+      </tr>
+
+      <tr>
+        <td class="text" colspan="1">Faza 1:</td>
+        <td class="descript" colspan="4">Kandidovanje u Toku</td>
+      </tr>
+      <tr>
+        <td class="text" colspan="1">Faza 2:</td>
+        <td class="descript" colspan="4">
+          Kandidovanje je Završeno, Priprema za Glasanje
+        </td>
+      </tr>
+      <tr>
+        <td class="text" colspan="1">Faza 3:</td>
+        <td class="descript" colspan="4">Glasanje u Toku</td>
+      </tr>
+      <tr>
+        <td class="text" colspan="1">Faza 4:</td>
+        <td class="descript" colspan="4">Glasanje je Završeno</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <br>
+    <button (click)="moveToLogin()"> Nazad na Login</button>
+  </div>
+</div>

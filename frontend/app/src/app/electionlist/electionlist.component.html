@@ -1,0 +1,52 @@
+<div class="bodyList" [ngClass]="{ 'blur': isModalOpen }">
+    <header>
+        <div>
+        <p>Regionalni centar: {{regcen.nazivRegCen}}</p>
+        <p>Matična sekcija: {{matsek.nazivMatSek}}</p>
+    </div>
+    <div class="tableContent">
+        <img src="/assets/ElectionLogo.png" class="img">
+    </div>
+    <div>
+        <p>Dobrodošli: {{user.imeCla}} {{user.prezimeCla}}</p>
+    </div>
+    </header>
+    <hr>
+    <br>
+        <h3>Kandidati</h3>
+        <br>
+        <table class="table w-50 tableBackground tableBox tableContent">
+            <thead>
+                <tr>
+                    <th>Redni broj</th>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Broj licence</th>
+                    <th>Izaberi kandidata</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let izabraniKandidat of izabraniKandidati">
+                    <td>{{izabraniKandidat.index}}</td>
+                    <td>{{izabraniKandidat.imeCla}}</td>
+                    <td>{{izabraniKandidat.prezimeCla}}</td>
+                    <td>{{izabraniKandidat.idCla}}</td>
+                    <td>
+                        <input type="checkbox" class="form-check-input checkbox checkboxPointer "
+                            [checked]="selektovaniKandidati[izabraniKandidat.idCla]"
+                            (change)="addToListSelectedCandidate(izabraniKandidat.idCla, $event)"
+                            [disabled]="user.jeGlasao == 1 || isConfirmationSubmitted" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <td><button (click)="confirmeCandidates()"
+                    [disabled]="user.jeGlasao == 1 || isConfirmationSubmitted">Potvrdi</button></td>
+            <td><button (click)="addVote()"
+                    [disabled]="potvrdjeniKandidati.length == 0 || user.jeGlasao == 1">Posalji</button></td>
+        </table>
+    </div>
+<div>
+    <app-modal *ngIf="isModalOpen" (modalClosed)="handleModalClosed($event)"></app-modal>
+</div>

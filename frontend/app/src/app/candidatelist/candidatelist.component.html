@@ -1,0 +1,83 @@
+<div class="row">
+        <div class="card bg-secondary col-lg-12">
+            <div class="card-header bg-light"><h4><i>Kandidovanje u toku</i></h4>
+            </div>
+            <div class="card-body">
+                <img src="../../assets/ElectionLogo.png" width="12%" height="12%">
+            </div>
+        </div>
+</div>
+<br>
+<div class="row mb-10">
+    <div class="col-lg-8">
+        <div class="card text-dark bg-success" style="max-width: 25rem;">
+            <div class="card-header text-center"><h3>Moji podaci su:</h3></div>
+            <div class="card-body">
+                    <table class="table tableBox tableBackground table-hover">
+                      <thead>
+                          <tr class="table-light">
+                              <th scope="col">Ime</th>
+                              <th scope="col">Prezime</th>
+                              <th scope="col">Naziv regionalnog centra</th>
+                              <th scope="col">Naziv matične sekcije</th>
+                          </tr>
+                      </thead>  
+                      <tbody>         
+                          <tr class="table-light">
+                              <td>{{user.imeCla}}</td>
+                              <td>{{user.prezimeCla}}</td>
+                              <td>{{regcen.nazivRegCen}}</td>
+                              <td>{{matsek.nazivMatSek}}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="row" [ngClass]="{ 'blur': isModalOpen }">
+    <div class="col-lg-8">
+        <div class="card text-dark bg-success" style="max-width: 200rem;">
+            <div class="card-header text-center"><h3>Želim da kandidujem sledeće kandidate:</h3></div>
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+                    <table class="table table-light tableBox table-hover">
+                        <thead>
+                            <tr>
+                                <th>Redni broj</th>
+                                <th>Ime</th>
+                                <th>Prezime</th>
+                                <th>Broj licence</th>
+                                <th>Izaberi kandidata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let candidate of candidatesByDistrict">
+                                <td>{{ candidate.index }}</td>
+                                <td>{{ candidate.imeCla }}</td>
+                                <td>{{ candidate.prezimeCla }}</td>
+                                <td>{{ candidate.idCla }}</td>
+                                <td><label>
+                                    <input type="checkbox" class="checkbox form-check-input" [checked]="checkedCandidates[candidate.idCla]" (change)="toggleSelection(candidate.idCla, $event)" [disabled]="user.jeKandidovao == 1 || isConfirmationSubmitted || selectedCandidates.length > 2">
+                                    </label>  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><button type="button" class="btn btn-success" [disabled]="user.jeKandidovao == 1 || isConfirmationSubmitted" (click)="confirmCandidates()">Potvrdi</button></td>
+                                <td colspan="3"><button type="submit" class="btn btn-success" [disabled]="user.jeKandidovao == 1 || selectedCandidates.length == 0">Pošalji</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <app-modal *ngIf="isModalOpen" (modalClosed)="handleModalClosed($event)"></app-modal>
+</div>
+

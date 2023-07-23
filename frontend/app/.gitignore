@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+localHost.ts
+.angular
+src.zip
+.vscode
+src.7z

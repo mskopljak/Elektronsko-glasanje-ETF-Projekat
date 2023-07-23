@@ -1,0 +1,26 @@
+<div class="row mt-5">
+    <div class="col-lg-8">
+        <div class="card text-white bg-success" style="max-width: 50rem;">
+            <div class="card-header text-center">Prijava na sistem</div>
+            <div class="card-body">
+                <form (keydown)="onKeyDown($event)">
+                    <table class="table tableBackground tableBox table-hover">
+                        <tr>
+                            <td><label><input type="text" class="form-control" placeholder="Unesite korisničko ime" name="korIme" [(ngModel)]="korIme" required></label></td>
+                        </tr>
+                        <tr>
+                            <td><label><input type="password" class="form-control" placeholder="Unesite šifru" name="sifra" [(ngModel)]="sifra" required ></label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="btn btn-success" (click)="login()" >Prijava</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,14 @@
+node_modules
+package-lock.json
+credentials.ts
+initMysql.ts
+port.ts
+build 
+src.zip
+build
+.vscode
+src.7z
+credentials.js
+
+
+
